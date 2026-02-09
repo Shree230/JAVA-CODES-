@@ -1,0 +1,121 @@
+package com.tnsif.constructordemo;
+// demo for constructor 
+
+public class Constructorexam {
+	
+	Constructorexam(){
+	System.out.println("default con");	
+	}
+	Constructorexam(int a){
+		System.out.println("1 parameter");	
+	}
+	Constructorexam(String b, int s){
+		System.out.println("2 parameter");	
+	}
+	public static void main(String[] args) {
+		Constructorexam c=new Constructorexam();
+		Constructorexam c1=new Constructorexam("rash",7);
+		Constructorexam c2=new Constructorexam(5);
+	}
+
+}
+
+
+package com.tnsif.constructordemo;
+// demo for constructor 
+public class Customer {
+	
+	private String Customername;
+	private String customeraddress;
+	private int customerid;
+	
+	// default constructor
+	
+	Customer(){
+		System.out.println("default constructor");
+	}
+	
+	// parameterized constructor 
+	
+	Customer(String Customername,String customeraddress,int customerid){
+		this.Customername=Customername;
+		this.customeraddress=customeraddress;
+		this.customerid=customerid;
+		
+	}
+	// getter and setter 
+
+	public String getCustomername() {
+		return Customername;
+	}
+
+	public void setCustomername(String customername) {
+		Customername = customername;
+	}
+
+	public String getCustomeraddress() {
+		return customeraddress;
+	}
+
+	public void setCustomeraddress(String customeraddress) {
+		this.customeraddress = customeraddress;
+	}
+
+	public int getCustomerid() {
+		return customerid;
+	}
+
+	public void setCustomerid(int customerid) {
+		this.customerid = customerid;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [Customername=" + Customername + ", customeraddress=" + customeraddress + ", customerid="
+				+ customerid + "]";
+	}
+	
+	
+	
+}
+package com.tnsif.constructordemo;
+
+import java.util.Scanner;
+
+// main class
+public class Constomerdemo {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the name");
+		String name=sc.next();
+		System.out.println("enter the address");
+		String address=sc.next();
+		System.out.println("enter the id");
+		int id=sc.nextInt();
+		
+		 Customer c=new  Customer();
+		 c.setCustomername(name);
+		 c.setCustomeraddress(address);
+		 c.setCustomerid(id);
+		 
+		 System.out.println(c);
+		 
+		 boolean output=c1 instanceof Customer;
+		 System.out.println(output);
+		 
+		
+	}
+
+}
+package com.tnsif.constructordemo;
+// demo for this keyword
+
+public class Student {
+	int rollno;
+	String name;
+
+	Student(int rollno, String name){
+		this.rollno=rollno;
+		this.name=name;
+	}
+}

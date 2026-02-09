@@ -1,0 +1,135 @@
+package com.tnsif.encapsulationdemo;
+// demo for encapsulation
+
+public class Encapsulationdemo {
+	int serialnumber;// data members or variables 
+	String name;
+	int age;
+	
+	void show() {// member function or fun
+	System.out.println(serialnumber+" "+name+ " "+" "+age);	
+	}
+public static void main(String[] args) {
+	Encapsulationdemo e=new Encapsulationdemo();
+	e.serialnumber=1;
+	e.name="roshini";
+	e.age=23;
+	
+	e.show();
+}
+}
+-------------------------------------------------------
+
+package com.tnsif.scannerdemo;
+
+import java.util.Scanner;
+
+// demo for scanner class
+public class Mainexce {
+	
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the number");
+	int a=sc.nextInt();
+	System.out.println("number is "+ a);
+	System.out.println("enter the name");
+	String b=sc.next();	
+	System.out.println("name is "+ b);
+	
+	}
+
+}
+-----------------------------------------------
+
+package com.tnsif.scannerdemo;
+// demo for tax calculation
+public class Person {
+	
+	// variables
+	
+	private String name;
+	private int income;
+	private int tax;
+	
+	// getter and setter method
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getIncome() {
+		return income;
+	}
+
+	public void setIncome(int income) {
+		this.income = income;
+	}
+
+	public int getTax() {
+		return tax;
+	}
+
+	public void setTax(int tax) {
+		this.tax = tax;
+	}
+	
+	
+	//out put
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", income=" + income + ", tax=" + tax + "]";
+	}
+
+	}
+-----------------------------------------------------------------
+
+package com.tnsif.scannerdemo;
+
+public class Taxcalculation {
+	
+public void calculatetax( Person p) {
+	
+	if(p.getIncome()<=16000) {
+		p.setTax(0);
+	}
+	
+	else if(p.getIncome()>16000 && p.getIncome()<50000){
+		p.setTax(5);
+	}
+	else {
+		p.setTax(10);
+	}
+}
+}
+-----------------------------------------------------
+
+package com.tnsif.scannerdemo;
+
+import java.util.Scanner;
+
+public class Personexce {
+public static void main(String[] args) {
+	
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter person name");
+	String name=sc.next();
+	
+	System.out.println("enter person income");
+	int income=sc.nextInt();
+	
+	Person pp=new Person();
+	pp.setName(name);
+	pp.setIncome(income);
+	
+	Taxcalculation t=new Taxcalculation();
+	t.calculatetax(pp);
+	
+	System.out.println("after tax calculation");
+	System.out.println(pp);
+	
+}
+}
