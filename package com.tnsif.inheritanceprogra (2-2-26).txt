@@ -1,0 +1,101 @@
+package com.tnsif.inheritanceprogram;
+// demo for single level inheritance 
+// parent class
+
+public class Course {
+	
+String Coursename="java programming";
+
+void showcourse() {
+	System.out.println("course "+Coursename);
+}
+}
+package com.tnsif.inheritanceprogram;
+//child class
+
+public class Student extends Course{
+	String Student="amit";
+	
+	void studentcourse() {
+		System.out.println(Student);
+	}
+	public static void main(String[] args) {
+		Student s=new Student();
+		s.showcourse();
+		s.studentcourse();
+	}
+
+}
+
+package com.tnsif.inheritanceprogram;
+// demo for multilevel inheritance
+
+//parent class
+class Demo {
+void devicetype() {
+	System.out.println("iam an electronic device");
+}
+}
+
+//son
+class Phone extends Demo{
+	void brand() {
+		System.out.println("brand:samsung");
+	}
+}
+
+//grandson
+class Smartphone extends Phone{
+	void Smartphone() {
+		System.out.println("features: camera, internet");
+	}
+}
+
+//main
+
+public class Device{
+	public static void main(String[] args) {
+		Smartphone s=new Smartphone();
+		s.devicetype();
+		s.brand();
+		s.Smartphone();
+	}
+}
+package com.tnsif.inheritanceprogram;
+
+//parent class
+class Employee{
+	void company() {
+		System.out.println("company : Techcorp");
+	}
+}
+
+
+//child class1
+class Developer extends Employee{
+	void role() {
+		System.out.println("role : software developer");
+	}
+}
+
+//child class2
+class Tester extends Employee{
+	void role() {
+		System.out.println("Role:QA Tester");
+	}
+}
+
+
+public class Hierachicaldemo {
+	public static void main(String[] args) {
+		Developer  d=new Developer ();
+		Tester  t=new Tester ();
+		
+		d.company();
+		d.role();
+		
+		t.company();
+		t.role();
+	}
+
+}
