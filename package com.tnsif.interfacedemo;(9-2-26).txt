@@ -1,0 +1,106 @@
+package com.tnsif.interfacedemo;
+// demo for interface
+public interface SmartDevice {
+	void turnon();  // abstract method
+	void turnoff();
+	void getstatus();
+}
+
+package com.tnsif.interfacedemo;
+
+class Smartlight implements SmartDevice{
+
+	@Override
+	public void turnon() {
+		System.out.println("smart light on");
+	}
+
+	@Override
+	public void turnoff() {
+	System.out.println("smart light off");	
+	}
+
+	@Override
+	public void getstatus() {
+		System.out.println("smart is standby mode");
+	}
+	
+}
+
+public class Interfacedemo {
+public static void main(String[] args) {
+	Smartlight s=new Smartlight();
+	s.turnon();
+	s.turnoff();
+	s.getstatus();
+}
+}
+
+
+package com.tnsif.interfacedemo;
+
+//parent
+public interface Interfaceone {
+void print();
+}
+
+
+package com.tnsif.interfacedemo;
+
+//parent
+public interface Interfacetwo{
+void show();
+}
+
+package com.tnsif.interfacedemo;
+// multiple level inheritance 
+public class Demo implements Interfacetwo,Interfaceone{
+
+	@Override
+	public void print() {
+		System.out.println("welcome");
+		
+	}
+
+	@Override
+	public void show() {
+		System.out.println("hello world");
+		
+	}
+	public static void main(String[] args) {
+		Demo d=new Demo();
+		d.print();
+		d.show();
+	}
+
+}
+
+
+package com.tnsif.interfacedemo;
+// demo for nested interface
+
+public interface Myinterface {
+	void calculateArea();
+	
+	// nested interface
+	interface Myinnerinterface{
+		int id=20;
+		void print();
+	}
+}
+package com.tnsif.interfacedemo;
+
+public class Nestedinterfacedemo implements Myinterface.Myinnerinterface{
+
+	@Override
+	public void print() {
+		System.out.println("nested interface");
+		
+	}
+public static void main(String[] args) {
+	Nestedinterfacedemo n=new Nestedinterfacedemo();
+	n.print();
+	System.out.println(n.id);
+	System.out.println(Nestedinterfacedemo.id);
+}
+}

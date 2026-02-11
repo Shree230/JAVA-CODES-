@@ -1,0 +1,124 @@
+package com.tnsif.statickeywordemo;
+// demo for static variables
+
+public class Userdemo {
+	String Username;
+	static String appname="instaclone";// shared by all users
+	
+	Userdemo(String Username){
+		this.Username=Username;
+	}
+	//method
+	void showdetails() {
+		System.out.println("user : "+Username +" "+"App : "+appname);
+	}
+	
+public static void main(String[] args) {
+	Userdemo d1=new Userdemo("renu");
+	Userdemo d2=new Userdemo("ruth");
+	
+	d1.showdetails();
+	d2.showdetails();
+}
+}
+
+
+package com.tnsif.statickeywordemo;
+// demo for static method
+
+public class Student {
+	int rollno;
+	String name;
+	static String college="IIT";
+	
+	//static method change value
+	
+	static void change() {
+		college="nagarjuna";
+		
+	}
+	Student(int r,String s){
+		rollno=r;
+		name=s;
+	}
+	void display() {
+		System.out.println(rollno+" "+name+" "+college);
+	}
+	public static void main(String[] args) {
+		Student.change();
+		
+		Student s1=new Student(1,"sush");
+		Student s2=new Student(2,"suma");
+		Student s3=new Student(3,"suhasini");
+		
+		s1.display();
+		s2.display();
+		s3.display();
+		
+	}
+
+}
+
+
+package com.tnsif.statickeywordemo;
+// demo for static block
+public class Staticblockdemo {
+static {
+	System.out.println("welcome to java");
+}
+public static void main(String[] args) {
+	System.out.println("welcome to python");
+}
+}
+
+
+package com.tnsif.finaldemo;
+// demo for final variable
+public class UPIApp {
+	final int Max_limit=10000; // daily tranfer limit
+
+	void show() {
+		System.out.println(Max_limit);
+	}
+	public static void main(String[] args) {
+		 UPIApp u=new  UPIApp();
+		 u.show();
+	 u.Max_limit=30000;// u cant change the value
+	}
+}
+
+
+package com.tnsif.finaldemo;
+// demo for final method
+
+class Platform{
+	final  void caluculate() {
+		System.out.println("base discount=10%");
+	}
+}
+class Amazon extends Platform{
+	@Override
+	void caluculate() {
+		System.out.println("base discount=20%");
+	}
+}
+
+public class Finalmethod {
+	
+
+}
+
+
+package com.tnsif.finaldemo;
+// demo for final class
+
+final class  Amazon{
+	
+}
+class flipkart extends Amazon{
+	
+}
+
+public class Demo {
+
+}
