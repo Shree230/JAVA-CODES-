@@ -1,0 +1,120 @@
+package com.tnsif.exceptionhandlingdemo;
+// no exception
+
+public class Test1 {
+	public static void main(String[] args) {
+		try {
+			System.out.println("welcome to our java course");
+		}
+		catch(ArithmeticException s) {
+		System.out.println(s.getMessage());	
+		}
+		finally {
+			System.out.println("hello my dear students");
+		}
+	}
+
+}
+
+---------------------------------------
+package com.tnsif.exceptionhandlingdemo;
+// exception with matching catch block
+
+public class Test2 {
+	public static void main(String[] args) {
+		try {
+			System.out.println(44/0);
+		}
+		catch(Exception t) {
+			System.out.println(t);
+		}
+		finally {
+			System.out.println("hello world");
+		}
+	}
+
+}
+--------------------------------
+package com.tnsif.exceptionhandlingdemo;
+
+import java.io.IOException;
+
+// exception with no matching catch block
+
+public class Test3 {
+	public static void main(String[] args) {
+		try {
+			System.out.println(9/0);
+		}
+		catch(ArrayIndexOutOfBoundsException c) {
+			System.out.println(c);
+		}
+		finally {
+			System.out.println("thank you");
+		}
+	}
+
+}
+
+package com.tnsif.exceptionhandlingdemo;
+// demo for throw keyword
+public class Throwdemo {
+	
+	void validate(int age) {
+		if(age<18) {
+			throw new ArithmeticException("you are not eligiable");
+			
+		}
+		else {
+			System.out.println("you are eligiable");
+		}
+	}
+	public static void main(String[] args) {
+		Throwdemo t=new Throwdemo();
+		t.validate(9);
+	}
+
+}
+package com.tnsif.exceptionhandlingdemo;
+
+import java.io.IOException;
+
+// demo for throws keyword
+public class Throwsdemo {
+	//rashmi
+	void m1() { // no exception
+	System.out.println("no exception");	
+	}
+	//gayitri 
+	void m2() throws ArithmeticException,ArrayIndexOutOfBoundsException{
+		System.out.println("device error");
+	}
+	// tharini
+	void m3() throws ArithmeticException,IOException{
+		System.out.println("file errro");
+	}
+public static void main(String[] args) {
+	Throwsdemo t=new Throwsdemo();
+	t.m1();
+//	try {
+//	t.m2();
+//	}
+//	catch(ArithmeticException r) {
+//		System.out.println(r);
+//	}
+	
+	t.m2();
+	
+	t.m3();
+	
+//	try {
+//	t.m3();
+//	}
+//	catch(ArithmeticException s) {
+//		System.out.println(s);
+//	}
+//	catch(IOException g) {
+//		System.out.println(g);
+//	}
+}
+}

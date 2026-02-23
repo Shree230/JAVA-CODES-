@@ -1,0 +1,84 @@
+package com.tnsif.collectionframework;
+
+import java.util.ArrayList;
+
+// demo for array list
+public class Arraylistdemo {
+	public static void main(String[] args) {
+		
+     ArrayList al=new ArrayList();
+     al.add(4);
+     al.add("fruit");
+     al.add(3.5f);
+     al.add('f');
+     
+     al.remove(3);
+     
+     System.out.println(al);
+
+
+}
+}
+
+package com.tnsif.collectionframework;
+
+import java.util.LinkedList;
+import java.util.List;
+
+// demo for linked list
+public class Linkedlistdemo {
+	public static void main(String[] args) {
+		List<String> li=new LinkedList<String>();
+		
+		li.add("suma");
+		li.add("giri");
+		li.add("anushma");
+		
+		System.out.println(li);
+		
+		li.addFirst("cheery");
+		li.addLast("geetha");
+		System.out.println(li);
+		
+		li.remove(2);
+		System.out.println(li);
+		
+		for(String fruits:li) {
+			System.out.println(fruits);
+		}
+		
+	}
+
+}
+package com.tnsif.collectionframework;
+
+import java.util.Vector;
+
+// demo for vector 
+public class Vectordemo {
+public static void main(String[] args) {
+	Vector<Integer> v=new Vector<Integer>();
+	// add element
+	 
+	v.add(20);
+	v.add(50);
+	v.add(70);
+	v.add(90);
+	v.add(20);
+	v.add(90);
+	
+	v.set(1, 76);
+	
+	System.out.println(v);
+	
+	v.remove(3);
+	System.out.println(v);
+	for(int f:v) {
+		System.out.println(f);
+	}
+	
+	System.out.println(v.size());
+	v.clear();
+	System.out.println(v);
+}
+}
